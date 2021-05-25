@@ -19,3 +19,14 @@ body{
   line-height: 1.5;
   font-family: 'raleway';
 }
+
+/* FOOTER */
+
+footer {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  height: 100%;
+  align-items: center;
+  padding-top: 1rem;
+}
