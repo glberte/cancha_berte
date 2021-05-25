@@ -11,3 +11,11 @@
   --clr-text-gold: #ffd700;
  
 }
+
+body{
+  margin: 1em;
+  background-color: var(--clr-bg-dark);
+  font-family: sans-serif;
+  line-height: 1.5;
+  font-family: 'raleway';
+}
