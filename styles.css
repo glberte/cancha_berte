@@ -1,0 +1,13 @@
+*{
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+  
+/* ------ PROPIEDADES POR ETIQUETAS ----- */
+:root {
+  --clr-bg-light: #3b3b3b;
+  --clr-bg-dark: #242424;
+  --clr-text-gold: #ffd700;
+ 
+}
