@@ -9,9 +9,39 @@
   --clr-bg-light: #3b3b3b;
   --clr-bg-dark: #242424;
   --clr-text-gold: #ffd700;
- 
+  --clr-btn-black: rgba(24, 24, 51, 0.15) 
 }
 
+html{
+  height: 100%;
+}
+
+body{
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  min-height: 100%;
+}
+
+/* ------ ESTRUCTURA GRID----- */
+
+.grid_container > * {
+  box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+  padding: 10px;
+  text-align: center;
+}
+
+.header {
+  grid-area: header;
+  background-color: #afd6af;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100px;
+  display: flex;
+}
+
+<<<<<<< HEAD
 body{
   margin: 1em;
   background-color: var(--clr-bg-dark);
@@ -19,6 +49,216 @@ body{
   line-height: 1.5;
   font-family: 'raleway';
 }
+=======
+.principal {
+  grid-area: principal;
+  background-color: #f5f5f5;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background-color: #85aedd;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #8c96a0;
+}
+
+.grid_container {
+  display: grid;
+  gap: 10px;
+  grid-template:
+   "header" 200px
+   "sidebar" auto
+   "principal" auto
+   "footer" 200px /
+   auto
+  }
+  
+  /* ------ RESPONSIVE ----- */
+  @media (min-width: 900px){
+    .grid_container {
+      grid-template:
+     "header  header" 100px
+     "sidebar principal" auto
+     "footer  footer" 100px /
+     200px    auto;
+    }
+  }
+
+  /*  ----- ASIDE ----- */
+
+  .btn {
+    cursor: pointer;
+    display: inline-block;
+    border: 0px;
+    background: transparent;
+    color: gold;
+    z-index: 0;
+    font-size: 1.125rem;
+    padding: 0.5em;
+    position: relative;
+  }
+
+  .btn::after {
+    content: " ";
+    position: absolute;
+    background:var(--clr-btn-black);
+    height: 0.85em;
+    width: 50%;
+    left: 0;
+    top: 37%;
+    transform-origin: bottom left;
+    transition: transform 250ms ease;
+    border-radius: 3px;
+
+    /* z-index: -2; */
+  }
+
+  .btn:hover::after,
+  .btn:focus::after {
+    transform: scale(1.9);
+    z-index: 1;
+    opacity: 1;
+  }
+
+
+
+
+  /* ------ PROPIEDADES PARA EL NAV ----- */
+
+  .container_logo a {
+    height: 50px;
+    width: 50px;
+    line-height: 80px;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between; 
+    max-width: 992px;
+    margin: 0 auto;
+  }
+
+  .nav-link {
+    color: white;
+    text-decoration: none;
+  }
+
+  .nav-menu {
+    display: flex;
+    margin-right: 40px;
+    list-style: none;
+  }
+
+  .nav-menu-item {
+    font-size: 18px;
+    margin: 0 10px;
+    line-height: 80px;
+    text-transform: uppercase;
+    width: max-content;
+  }
+
+  .nav-menu-item {
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 3px;
+  }
+  .nav-menu-item:hover {
+    background-color: grey;
+    transition: 0.5s;
+  }
+
+  .nav-toggle {
+    color: black;
+    background: none;
+    border: none;
+    font-size: 30px;
+    padding: 0 20px;
+    line-height: 60px;
+    display: none;
+  }
+
+ /*  RESPONSIVE PARA CELULARES */
+
+  @media (max-width: 768px) {
+    body{
+      padding-top: 20px;
+      /* min-height: 100%; */ 
+    }
+
+    .header {
+      height: 60px;
+    }
+    
+    /* .grid_container {
+      display: grid;
+      gap: 10px;
+      grid-template:
+       "header" 200px
+       "sidebar" auto
+       "principal" auto
+       "footer" 200px /
+       auto
+      } */
+              
+      .container_logo {
+        padding: 0 20px;
+        line-height: 60px;
+        font-size: 25px;
+      }
+
+      .navbar {
+        display: flex;
+        align-content: space-between;
+      }
+  
+      .nav-menu {
+        flex-direction: column;
+        align-items: center;
+        margin-right: 10px;
+        background-color: black;
+        position: fixed;
+        right: 0;
+        top: 60px;
+        width: 75%;
+        padding: 20px 0px;
+ 
+        height: calc(100% - 60px);
+        overflow-y: auto;
+        /* transform: scale(0);          */
+
+      }
+    
+      .nav-menu-item {
+        line-height: 40px;
+      }
+    
+      .nav-menu-item:hover {
+        background: none;
+        color: green;
+        transition: 0.5s;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .nav-menu_visible {
+        left: 0;
+        transition: left 0.3s;
+      }
+
+
+  }
+    
+    
+
+  /* min 17:31 https://www.youtube.com/watch?v=xQstBIPeOdU */
+
+
+>>>>>>> dev
 
 /* FOOTER */
 
@@ -30,3 +270,7 @@ footer {
   align-items: center;
   padding-top: 1rem;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> dev
