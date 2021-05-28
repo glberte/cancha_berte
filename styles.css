@@ -9,8 +9,9 @@
   --clr-bg-light: #3b3b3b;
   --clr-bg-dark: #242424;
   --clr-text-gold: #ffd700;
- 
+  --clr-btn-black: rgba(24, 24, 51, 0.15) 
 }
+
 html{
   height: 100%;
 }
@@ -55,7 +56,6 @@ body{
   background-color: #8c96a0;
 }
 
- 
 .grid_container {
   display: grid;
   gap: 10px;
@@ -77,6 +77,45 @@ body{
      200px    auto;
     }
   }
+
+  /*  ----- ASIDE ----- */
+
+  .btn {
+    cursor: pointer;
+    display: inline-block;
+    border: 0px;
+    background: transparent;
+    color: gold;
+    z-index: 0;
+    font-size: 1.125rem;
+    padding: 0.5em;
+    position: relative;
+  }
+
+  .btn::after {
+    content: " ";
+    position: absolute;
+    background:var(--clr-btn-black);
+    height: 0.85em;
+    width: 50%;
+    left: 0;
+    top: 37%;
+    transform-origin: bottom left;
+    transition: transform 250ms ease;
+    border-radius: 3px;
+
+    /* z-index: -2; */
+  }
+
+  .btn:hover::after,
+  .btn:focus::after {
+    transform: scale(1.9);
+    z-index: 1;
+    opacity: 1;
+  }
+
+
+
 
   /* ------ PROPIEDADES PARA EL NAV ----- */
 
@@ -118,25 +157,94 @@ body{
     border-radius: 3px;
   }
   .nav-menu-item:hover {
-    background-color: green;
+    background-color: grey;
     transition: 0.5s;
   }
 
   .nav-toggle {
-    color: white;
+    color: black;
     background: none;
     border: none;
     font-size: 30px;
     padding: 0 20px;
-
+    line-height: 60px;
     display: none;
   }
 
-/*  RESPONSIVE PARA CELULARES */
+ /*  RESPONSIVE PARA CELULARES */
 
   @media (max-width: 768px) {
-    flex-direction: column;
+    body{
+      padding-top: 20px;
+      /* min-height: 100%; */ 
+    }
+
+    .header {
+      height: 60px;
+    }
+    
+    /* .grid_container {
+      display: grid;
+      gap: 10px;
+      grid-template:
+       "header" 200px
+       "sidebar" auto
+       "principal" auto
+       "footer" 200px /
+       auto
+      } */
+              
+      .container_logo {
+        padding: 0 20px;
+        line-height: 60px;
+        font-size: 25px;
+      }
+
+      .navbar {
+        display: flex;
+        align-content: space-between;
+      }
+  
+      .nav-menu {
+        flex-direction: column;
+        align-items: center;
+        margin-right: 10px;
+        background-color: black;
+        position: fixed;
+        right: 0;
+        top: 60px;
+        width: 75%;
+        padding: 20px 0px;
+ 
+        height: calc(100% - 60px);
+        overflow-y: auto;
+        /* transform: scale(0);          */
+
+      }
+    
+      .nav-menu-item {
+        line-height: 40px;
+      }
+    
+      .nav-menu-item:hover {
+        background: none;
+        color: green;
+        transition: 0.5s;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .nav-menu_visible {
+        left: 0;
+        transition: left 0.3s;
+      }
+
+
   }
+    
+    
 
   /* min 17:31 https://www.youtube.com/watch?v=xQstBIPeOdU */
 
